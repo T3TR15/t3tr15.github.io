@@ -1,4 +1,4 @@
-# t3tr15.github.io
+# T3TR15.github.io
 A Tetris variant made by two New York bois. What more is there to say? Quite a bit, actually...
 
 # Key binding
