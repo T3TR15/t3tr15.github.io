@@ -141,7 +141,7 @@ function ActiveTetromino()
         }
         else
         {
-            this.display(2);
+            this.display(3);
             this.x += xOff;
             this.y += yOff;
             this.blocks = direction;
