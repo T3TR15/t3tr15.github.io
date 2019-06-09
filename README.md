@@ -20,7 +20,7 @@ Although the game auto-detects if the board is full and starts a new game immedi
 
 # Potential errors
 Although a solution to the back-end code of each error listed here is possible, it's easier for us developers to inform you of these errors in order to minimize any suprises. With that clarification, let us do so.
-* Sometimes, you cannot rotate tetriminos on the extreme sides of the board. This is due to the way the board is set up (JavaScript arrays), and rotating the tetrimino would break the array's dimensions.
+* You cannot rotate certain tetriminos on the extreme sides of the board. This is due to the setup of the board (JavaScript arrays), and rotating the tetrimino would break the array's dimensions.
 * Occasionally, the board will flash, and (in extremely rare cases) leave full lines uncleared. However, the javascript.js file should rectify such errors on the board by itself. Apologies in advance if such errors ruin experiences of T3TR15 in competitive contexts.
 
 # Liability
