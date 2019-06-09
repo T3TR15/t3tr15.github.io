@@ -11,12 +11,15 @@ Key binding for tetriminos is based off of those found in Tetris Friends (see ht
 * P - Maximum VFX. A combination of basic particles and text, which displays your combo and follows the basic particles.
 
 # Rotation
-This variant of Tetris allows you to rotate your pieces at custom angles (highly not recommended, but a feature because why not?).
-* Q - Subtracts 45 degrees from the angle that the piece is being rotated (default is 90 degrees, minimum is 45).
-* E - Adds 45 degrees to the angle that the piece is being rotated (maximum is 180)
+This variant of Tetris allows you to rotate your tetriminos at custom angles (highly not recommended, but a feature because why not?).
+* Q - Subtracts 45 degrees from the angle that the tetrimino is being rotated (default is 90 degrees, minimum is 45 degrees).
+* E - Adds 45 degrees to the angle that the tetrimino is being rotated (maximum is 180 degrees).
 
 # Restarting the game
 Although the game auto-detects if the board is full, you can still reset your board and tetrimonos by pressing R.
 
 # That's all there is.
 Now head on over to https://t3tr15.github.io and enjoy! Please report bugs by emailing t3tr15.github.io@gmail.com.
+
+# Copyright concerns
+The developers of T3TR15 do not own anything related to the registered trademark of Tetris. This Tetris variant was made only for educational purposes.
