@@ -11,7 +11,7 @@ Key binding for tetriminos is based off of those found in Tetris Friends (see ht
 * P - Maximum VFX. A combination of basic particles and text, which displays your combo and follows the basic particles.
 
 # Rotation
-This variant of Tetris allows you to rotate your tetriminos at custom angles. (Highly not recommended, but a feature because why not?)
+This variant of Tetris allows you to rotate your tetriminos at custom angles. (Highly not recommended, but a feature anyways.)
 * Q - Subtracts 45 degrees from the angle that the tetrimino is being rotated (default is 90 degrees, minimum is 45 degrees).
 * E - Adds 45 degrees to the angle that the tetrimino is being rotated (maximum is 180 degrees).
 
