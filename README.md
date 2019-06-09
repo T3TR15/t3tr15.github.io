@@ -24,8 +24,8 @@ Occasionally, the board will flash, and (in extremely rare cases) leave full lin
 # Liability
 The developers of T3TR15 are not responsible for any damages, both physical and psychological, to any animate or inanimate objects as a result of an unfavorable T3TR15 experience.
 
-# That's all there is.
-Now head on over to https://t3tr15.github.io and enjoy! Please report bugs by emailing t3tr15.github.io@gmail.com.
-
 # Copyright concerns
 The developers of T3TR15 do not own anything related to the registered trademark of Tetris. This Tetris variant was made only for educational purposes.
+
+# That's all there is.
+Now head on over to https://t3tr15.github.io and enjoy! Please report any bugs (not including those mentioned under the "Potential errors" heading) by emailing t3tr15.github.io@gmail.com.
