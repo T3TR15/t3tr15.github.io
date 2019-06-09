@@ -1,7 +1,9 @@
 # T3TR15.github.io
-A Tetris variant made by two New York bois. What more is there to say? Quite a bit, actually...
+A Tetris variant made by two New York bois. What more is there to say? Quite a bit, actually. Please read this .md file in its entirety in order to be well-informed of the mechanics of this Tetris variant. Any potential "surpises" from your T3TR15 experience may be a result of your lack of willingness to do so.
 # Page setup
 There is text above the board. It includes (in the folloing order) your score, your highest combo, the degree of which you're rotating your tetrimino, the current VFX settings, and the status of the game (ongoing or paused). Game status and VFX settings are also displayed in the page's title.
+# Tetriminos
+If you choose to poke around in the index.html file, you may notice additional tetriminos listed as comments. These tetriminos were originally supposed to be in T3TR15, but would ruin the user experience. However, the only exception to this rule is the "onesquare" piece, which only takes up one space and is therefore viable as a custom tetrimino.
 # Key binding
 Key binding for tetriminos is based off of those found in Tetris Friends (see https://i.redd.it/5yj1ehsbxfu21.png), with additional WASD keys which correspond to the arrow keys. However, there are also additional keyboard controls that customize the overall user experience, which are covered below.
 # VFX settings
@@ -11,7 +13,7 @@ You can change VFX settings at any time. Below are the keys:
 * O - Medium VFX. Low VFX + basic particles.
 * P - Maximum VFX. A combination of basic particles and text, which displays your current combo and follows the basic particles.
 # Rotation
-This variant of Tetris allows you to rotate your tetriminos at custom angles. (Highly not recommended, but a feature anyways.) For user convenience, changing the rotation freezes the piece mid-air (but does not pause the game entirely).
+This Tetris variant allows you to rotate your tetriminos at custom angles. (Highly not recommended, but a feature anyways.) For user convenience, changing the rotation freezes the piece mid-air (but does not pause the game entirely).
 * Q - Subtracts 45 degrees from the angle that the tetrimino is being rotated (default is 90 degrees, minimum is 45 degrees).
 * E - Adds 45 degrees to the angle that the tetrimino is being rotated (maximum is 180 degrees).
 # Restarting the game
