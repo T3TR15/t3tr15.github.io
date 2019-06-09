@@ -2,7 +2,7 @@
 A Tetris variant made by two New York bois. What more is there to say? Quite a bit, actually...
 
 # Key binding
-Key binding for tetriminos is based off of those found in Tetris Friends (see https://i.redd.it/5yj1ehsbxfu21.png), with additional WASD keys which correspond to the arrow keys. However, there are also additional keyboard controls, which are covered below.
+Key binding for tetriminos is based off of those found in Tetris Friends (see https://i.redd.it/5yj1ehsbxfu21.png), with additional WASD keys which correspond to the arrow keys. However, there are also additional keyboard controls that customize the overall user experience, which are covered below.
 
 # VFX settings
 * U - Minimal VFX. Turns off particles and rotation of the screen.
