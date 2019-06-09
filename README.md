@@ -1,5 +1,5 @@
 # t3tr15.github.io
-A Tetris variant made by two bois. What more is there to say? Quite a bit, actually...
+A Tetris variant made by two New York bois. What more is there to say? Quite a bit, actually...
 
 # Key binding
 Key binding for tetriminos is based off of those found in Tetris Friends (see https://i.redd.it/5yj1ehsbxfu21.png), with additional WASD keys which correspond to the arrow keys. However, there are also additional keyboard controls, which are covered below.
@@ -28,4 +28,4 @@ The developers of T3TR15 are not responsible for any damages, both physical and 
 The developers of T3TR15 do not own anything related to the registered trademark of Tetris. This Tetris variant was made only for educational purposes.
 
 # That's all there is.
-Now head on over to https://t3tr15.github.io and enjoy! Please report any bugs (not including those mentioned under the "Potential errors" heading) by emailing t3tr15.github.io@gmail.com.
+Now head on over to https://T3TR15.github.io and enjoy! Please report any bugs (not including those mentioned under the "Potential errors" heading) by emailing T3TR15.github.io@gmail.com.
