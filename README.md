@@ -16,7 +16,13 @@ This variant of Tetris allows you to rotate your tetriminos at custom angles. (H
 * E - Adds 45 degrees to the angle that the tetrimino is being rotated (maximum is 180 degrees).
 
 # Restarting the game
-Although the game auto-detects if the board is full, you can still reset your board and tetrimonos by pressing R.
+Although the game auto-detects if the board is full and starts a new game immediately, you can still reset your board and tetrimonos by pressing R.
+
+# Potential errors
+Occasionally, the board will flash, and (in extremely rare cases) leave full lines uncleared. However, the javascript.js file should rectify such errors on the board by itself. Apologies in advance if such errors ruin experiences of T3TR15 in competitive contexts.
+
+# Liability
+The developers of T3TR15 are not responsible for any damages, both physical and psychological, to any animate or inanimate objects as a result of an unfavorable T3TR15 experience.
 
 # That's all there is.
 Now head on over to https://t3tr15.github.io and enjoy! Please report bugs by emailing t3tr15.github.io@gmail.com.
