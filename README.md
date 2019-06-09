@@ -11,4 +11,4 @@ Key binding for tetriminos is based off of those found in Tetris Friends (see ht
 * P - Maximum VFX. A combination of basic particles and text, which displays your combo and follows the basic particles.
 
 # That's all there is.
-Now head on over to t3tr15.github.io and enjoy! Please report bugs by emailing t3tr15.github.io@gmail.com.
+Now head on over to https://t3tr15.github.io and enjoy! Please report bugs by emailing t3tr15.github.io@gmail.com.
