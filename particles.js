@@ -1,6 +1,6 @@
 function Particle(motion,life,color)
 {
-    if (particlesOn == true)
+    if (particlesOn)
     { 
         this.motion = motion;
         this.life = life;
@@ -13,7 +13,7 @@ function Particle(motion,life,color)
             }
             ctx.fillStyle = colors[this.color + 3];
             ctx.font = "bold " + scale(this.life,0,250,0,50) + "px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
-            if (comboParticles == true)
+            if (comboParticles)
                 ctx.fillText(combo,this.motion[0],this.motion[1]);
             ctx.fillRect(this.motion[0],this.motion[1],scale(this.life,0,250,0,bSize),scale(this.life,0,250,0,bSize));
             this.life --;
