@@ -32,7 +32,7 @@ function scale(num,in_min,in_max,out_min,out_max)
 function mul(rot,vector)
 {
     var newVector = Array(vector.length).fill(0);
-    for(var y = 0; y < rot.length; y ++)
+    for(var y=0; y<rot.length; y++)
     {
         for(var x = 0; x < rot[y].length; x ++)
         {
@@ -43,7 +43,7 @@ function mul(rot,vector)
 }
 function displayBlocks(x,y,index)
 {
-    for(var i = 0; i < tetrominos[index].length; i ++)
+    for(var i = 0; i < tetrominos[index].length; i++)
     {
         ctx.fillStyle = colors[index + 3];
         ctx.fillRect(x + tetrominos[index][i][0] * bSize,y + tetrominos[index][i][1] * bSize,bSize,bSize);
