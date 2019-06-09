@@ -22,7 +22,7 @@ Although the game auto-detects if the board is full and starts a new game immedi
 Occasionally, the board will flash, and (in extremely rare cases) leave full lines uncleared. However, the javascript.js file should rectify such errors on the board by itself. Apologies in advance if such errors ruin experiences of T3TR15 in competitive contexts.
 
 # Liability
-The developers of T3TR15 are not responsible for any damages, both physical and psychological, to any animate or inanimate objects as a result of an unfavorable T3TR15 experience.
+The developers of T3TR15 are not responsible for any damages, including physical and psychological, to any animate or inanimate objects as a result of an unfavorable T3TR15 experience.
 
 # Copyright concerns
 The developers of T3TR15 do not own anything related to the registered trademark of Tetris. This Tetris variant was made only for educational purposes.
