@@ -1,7 +1,7 @@
 # T3TR15.github.io
 A Tetris variant made by two New York bois. What more is there to say? Quite a bit, actually. Please read this .md file in its entirety in order to be well-informed of the mechanics of this Tetris variant. Any potential "surpises" from your T3TR15 experience may be a result of your lack of willingness to do so.
 # Page setup
-There is text above the board. It includes (in the folloing order) your score, your highest combo, the degree of which you're rotating your tetrimino, the current VFX settings, and the status of the game (ongoing or paused). Game status and VFX settings are also displayed in the page's title.
+There is text above the board. It includes (in the following order) your score, your highest combo, the degree of which you're rotating your tetrimino, the current VFX settings, and the status of the game (ongoing or paused). Game status and VFX settings are also displayed in the page's title.
 # Tetriminos
 If you choose to poke around in the index.html file, you may notice additional tetriminos listed as comments. These tetriminos were originally supposed to be in T3TR15, but would ruin the user experience. However, the only exception to this rule is the "onesquare" piece, which only takes up one space and is therefore viable as a custom tetrimino.
 # Key binding
@@ -26,5 +26,5 @@ Although a solution to the back-end code of each error listed here is possible, 
 The developers of T3TR15 are not responsible for any damages, including physical and psychological, to any animate or inanimate objects as a result of a T3TR15 experience.
 # Copyright concerns
 The developers of T3TR15 do not own anything related to the registered trademark of Tetris. This Tetris variant was made only for educational purposes.
-# That's all there is.
+# That's all for now.
 Now head on over to https://T3TR15.github.io and enjoy! Please report any bugs (not including those mentioned under the "Potential errors" heading) by emailing T3TR15.github.io@gmail.com.
