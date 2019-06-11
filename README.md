@@ -29,5 +29,5 @@ The developers of T3TR15 are not responsible for any damages, including physical
 # Copyright concerns
 The developers of T3TR15 do not own anything related to the registered trademark of Tetris. This Tetris variant was made only for educational purposes.
 # That's all for now.
-Now head on over to https://T3TR15.github.io and enjoy! Please report any bugs (not including those mentioned under the "Potential errors" heading) by emailing T3TR15.github.io@gmail.com.<br>
-With love, JL and AZ
+Now head on over to https://T3TR15.github.io and enjoy! Please report any bugs (not including those mentioned under the "Potential errors" heading) by emailing T3TR15.github.io@gmail.com.<br><br>
+-With love, JL and AZ
