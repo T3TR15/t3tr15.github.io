@@ -3,7 +3,7 @@ T3TR15 is a Tetris variant made by two New York bois. What more is there to say?
 Quite a bit, actually.<br>
 Please read this document in its entirety in order to be well-informed of the mechanics of this Tetris variant. Any potential "surpises" from your T3TR15 experience may be a result of your lack of willingness to do so.
 # Page setup
-There is text above the board. It includes (in the following order) your score, your highest combo, the degree of which you're rotating your tetrimino, the current VFX settings, and the status of the game (ongoing or paused). Game status and VFX settings are also displayed in the page's title.
+There is text above the board. It includes (in the following order) your score, your current combo, your highest combo, the degree of which you're rotating your tetrimino, the current VFX settings, and the status of the game (ongoing or paused). Game status and VFX settings are also displayed in the page's title.
 # Tetriminos
 If you choose to poke around in the index.html file, you may notice additional tetriminos listed as comments. These tetriminos were originally supposed to be in T3TR15, but would ruin the user experience. However, the only exception to this rule is the "onesquare" piece, which only takes up one space and is therefore viable as a custom tetrimino.
 # Key binding
