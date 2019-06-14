@@ -1,1 +1,380 @@
-<!DOCTYPE HTML><html><head><title>T3TR15 | Loading.</title><link rel="icon"href="icon.png"><link rel="stylesheet"href="stylesheet.css"><script src="javascript.js"></script><script src="particles.js"></script><script src="utilities.js"></script><script>function initialize(){c=document.getElementById("cId");ctx=c.getContext("2d");fullScreen();graphics=("MaxVFX.");pausedTextDocTitle=('\u25B6');status=("Ongoing");pausedTextMainScreen=((status)+" game.");bw=10;bh=20;grid=Array(bh).fill(0).map(()=>Array(bw).fill(0));bSize=0;xOffset=(c.width/2)-((bw*bSize)/2);yOffset=(c.height/2)-((bh*bSize)/2);hold=-1;rotationSeed1=0;rotationSeed2=0;uniformity=1;pre=-1;points=0;movementMod=1;rotationMod=45;combo=0;highestCombo=0;fontSizeJS=20;minimalVFX=false;delay=false;lastClear=false;particlesOn=true;comboParticles=true;firstTime=true;paused=false;tetrominos=[[[-1.5,-0.5],[-0.5,-0.5],[0.5,-0.5],[1.5,-0.5]],[[-0.5,-0.5],[0.5,-0.5],[-0.5,0.5],[0.5,0.5]],[[-1,0],[0,0],[1,0],[1,-1]],[[-1,-1],[-1,0],[0,0],[1,0]],[[-1,0],[0,-1],[0,0],[1,0]],[[-1,-1],[0,-1],[0,0],[1,0]],[[-1,0],[0,0],[0,-1],[1,-1]],[[0,0]]];colors=["#000000","#202020","#000000","#3498DB","#F1C40F","#E67E22","#2980B9","#9B59B6","#E74C3C","#2ECC71","#D2D2D2","#022F44","#CF0000"];nextB=Array(5).fill(0).map(()=>rnd());a=new ActiveTetromino();a.display(a.colors+3);time=25;t=0;rotation=180;p=[];customRotAngle=90;ctx.textAlign="center";document.title=(("T3TR15 | ")+(pausedTextDocTitle)+" | "+(graphics));setInterval(display,20);}function display(){ctx.resetTransform();ctx.translate(c.width/2,c.height/2);ctx.rotate(rotation*(Math.PI/180));ctx.translate(-c.width/2,-c.height/2);bSize+=(20-bSize)/20;rotation+=(0-rotation)/10;xOffset+=((c.width/2)-((bw*bSize)/2)-xOffset)/20;yOffset+=((c.height/2)-((bh*bSize)/2)-yOffset)/20;pausedTextMainScreen=((status)+" game.");if(t >= time){if(delay){delay=false;}else{a.move(0,(movementMod),0);}t=0;for (i=3;i<colors.length;i++){if((grid[0].includes(i))){restart();break;}}}t++;ctx.fillStyle="#151515";ctx.fillRect(0,0,c.width,c.height);for(var y=0;y<grid.length;y++){for(var x=0;x<grid[y].length;x++){if(grid[y][x]==2&&rndNumber(0,1)<0.1){grid[y][x]=0;}ctx.fillStyle=colors[grid[y][x]];ctx.fillRect(x*bSize+xOffset,y*bSize+yOffset,bSize,bSize);}}for(var i=0;i<nextB.length;i++){displayBlocks(xOffset+(bw*bSize)+(bSize*2),yOffset+(i*(bSize*4))+(bSize*2),nextB[i]);}if(hold!=-1){displayBlocks(xOffset-(bSize*3),yOffset+(bSize*2),hold);}ctx.font=("bold "+(fontSizeJS)+"px -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif");ctx.fillStyle="#505050";ctx.fillText(((points)+" | "+(combo)+" | "+(highestCombo)+" | "+(customRotAngle)+" | "+(graphics)+" | "+(pausedTextMainScreen)),xOffset+(bSize*(bw/2)),yOffset-(bSize/2));if(firstTime){ctx.fillText(("T3TR15 - A Tetris variant by two New York bois. Please read the README.md file."),xOffset+(bSize*(bw/2)),(yOffset-(bSize/2)-40));}for(var i=p.length-1;i >= 0;i--){if(p[i].life>0){p[i].move();}else{p.splice(i,1);}}}function keyPressed(e){if(e.keyCode==32){if(paused){return;}var count=0;var y=0;var x=0;var color=0;while(a.move(0,1,0)!="next"){if(a.move(0,1,0)=="next"){break;}count++;if(!minimalVFX){bSize+=0.1;yOffset+=3;rotation+=(a.x-(bw/2-1))/3;y=a.y;x=a.x;color=a.color;}}for(var i=0;i<count;i++){p.push(new Particle([xOffset+(x*bSize),yOffset+(y*bSize),rndNumber(-5,5),rndNumber(-10,0),0,0.25],rndNumber(50,150),color));}}else if(e.keyCode==37||e.keyCode==65){if(paused){return;}a.move((-1*movementMod),0,0);if(!minimalVFX){rotation-=1;}}else if((e.keyCode==38||e.keyCode==87)||e.keyCode==88){if(paused){return;}a.move(0,0,customRotAngle);if(!minimalVFX){bSize++;xOffset=(c.width/2)-((bw*bSize)/2);yOffset=(c.height/2)-((bh*bSize)/2);}}else if(e.keyCode==17||e.keyCode==90){if(paused){return;}a.move(0,0,(-1*customRotAngle));if(!minimalVFX){bSize++;xOffset=(c.width/2)-((bw*bSize)/2);yOffset=(c.height/2)-((bh*bSize)/2);}}else if(e.keyCode==39||e.keyCode==68){if(paused){return;}a.move((movementMod),0,0);if(!minimalVFX){rotation+=1;}}else if(e.keyCode==40||e.keyCode==83){if(paused){return;}a.move(0,(movementMod),0);if(!minimalVFX){yOffset-=bSize/2;}}else if(e.keyCode==67||e.keyCode==16){if(paused){return;}if(!minimalVFX){if(rotationSeed2++%2==0){rotation+=-1;}else{rotation+=1;}}else if(minimalVFX){rotation=0;}if(hold==-1){hold=a.color;a.display(0);a.nextBlocks(nextB.splice(0,1)[0]);nextB.push(rnd());}else{var temp=hold;hold=a.color;a.display(0);a.nextBlocks(temp);}}else if(e.keyCode==82){if(paused){return;}restart();}else if(e.keyCode==85){particlesOn=false;comboParticles=false;minimalVFX=true;graphics=("MinVFX");}else if(e.keyCode==73){particlesOn=false;comboParticles=false;minimalVFX=false;graphics=("LowVFX");}else if(e.keyCode==79){particlesOn=true;comboParticles=false;minimalVFX=false;graphics=("MedVFX");}else if(e.keyCode==80){particlesOn=true;comboParticles=true;minimalVFX=false;graphics=("MaxVFX");}else if(e.keyCode==81){if(paused){return;}delay=true;customRotAngle=customRotAngle-rotationMod;if(customRotAngle <= 0){customRotAngle=45;}}else if(e.keyCode==69){if(paused){return;}delay=true;customRotAngle=customRotAngle+rotationMod;if(customRotAngle >= 180){customRotAngle=180;}}else if(e.keyCode==27){paused=!paused;if(paused){movementMod=0;rotationMod=0;pausedTextDocTitle=(('\u2225'));status=("Paused");}else{rotationMod=45;movementMod=1;pausedTextDocTitle=('\u25B6');status=("Ongoing");}}document.title=(("T3TR15 | ")+(pausedTextDocTitle)+" | "+(graphics));}function restart(){grid=Array(bh).fill(0).map(()=>Array(bw).fill(0));nextB=Array(5).fill(0).map(()=>rnd());a=new ActiveTetromino();delay=false;firstTime=false;hold=-1;customRotAngle=90;pre=-1;points=0;lastClear=false;combo=0;if(!minimalVFX){bSize=0;if(rotationSeed1++%2==0){rotation-=180;}else{rotation+=180;}}}function fullScreen(){c.width=window.innerWidth;c.height=window.innerHeight;ctx.textAlign="center";}</script></head><body onload="initialize();"onresize="fullScreen();" onkeydown="keyPressed(event);"><canvas id="cId"></canvas></body></html>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>T3TR15 | Loading.</title> <!-- only exists in case of low-end computers loading html page for longer than expected -->
+        <link rel = "stylesheet" href = "stylesheet.css">
+        <script src = "javascript.js"></script>
+        <script src = "particles.js"></script>
+        <script src = "utilities.js"></script>
+        <script>
+            function initialize()
+            {
+                c = document.getElementById("cId");
+                ctx = c.getContext("2d");
+                fullScreen();
+                graphics = ("MaxVFX.");
+                pausedTextDocTitle = ('\u25B6');
+                status = ("Ongoing");
+                pausedTextMainScreen = ((status) + " game.");
+                bw = 10; //width of the board.
+                bh = 20; //height of the board.
+                grid = Array(bh).fill(0).map(() => Array(bw).fill(0));
+                bSize = 0;
+                xOffset = (c.width / 2) - ((bw * bSize) / 2);
+                yOffset = (c.height / 2) - ((bh * bSize) / 2);
+                hold = -1;
+                rotationSeed1 = 0;
+                rotationSeed2 = 0;
+                uniformity = 1;
+                pre = -1;
+                points = 0;
+                movementMod = 1;
+                rotationMod = 45;
+                combo = 0;
+                highestCombo = 0;
+                fontSizeJS = 20;
+                lastHeld = false;
+                minimalVFX = false;
+                delay = false;
+                lastClear = false;
+                particlesOn = true;
+                comboParticles = true;
+                firstTime = true;
+                paused = false;
+                tetrominos = [
+                    //I
+                    [[-1.5,-0.5],[-0.5,-0.5],[0.5,-0.5],[1.5,-0.5]]
+                    ,
+                    //O
+                    [[-0.5,-0.5],[0.5,-0.5],[-0.5,0.5],[0.5,0.5]]
+                    ,
+                    //L
+                    [[-1,0],[0,0],[1,0],[1,-1]]
+                    ,
+                    //J
+                    [[-1,-1],[-1,0],[0,0],[1,0]]
+                    ,
+                    //T
+                    [[-1,0],[0,-1],[0,0],[1,0]]
+                    ,
+                    //Z
+                    [[-1,-1],[0,-1],[0,0],[1,0]]
+                    ,
+                    //S
+                    [[-1,0],[0,0],[0,-1],[1,-1]]
+                    ,
+                    //onesquare
+                    [[0,0]]
+                    //,
+                    //Giant O (custom piece, may ruin player experience due to its size, so this line and its associated array/comma are converted to commented lines)
+                    //[[-1,-1],[-1,0],[-1,1],[0,-1],[0,0],[0,1],[1,-1],[1,0],[1,1]]
+                    //,
+                    //PewDiePie (Brofist, custom piece, may ruin player experience due to its size, so this line and its associated array/comma are converted to commented lines)
+                    //[[-1,-1],[0,-1],[0,0],[0,1],[1,-1],[1,0],[1,1]
+                    //,
+                    //T-Series (custom piece, may ruin player experience due to its size, so this line and its associated array is converted to a commented line)
+                    //[[-1,0],[0,0],[1,-1],[1,0],[1,1]]
+                ];
+                colors = ["#000000","#202020","#000000","#3498DB","#F1C40F","#E67E22","#2980B9","#9B59B6","#E74C3C","#2ECC71","#D2D2D2","#022F44","#CF0000"];
+                nextB = Array(5).fill(0).map(() => rnd());
+                a = new ActiveTetromino();
+                a.display(a.colors + 3);
+                time = 25;
+                t = 0;
+                rotation = 180;
+                p = [];
+                customRotAngle = 90;
+                totalClears = 0;
+                displayIntervalMod = 20;
+                ctx.textAlign = "center";
+                document.title = (("T3TR15 | ") + (pausedTextDocTitle) + " | " + (graphics));
+                displayIntervalID = setInterval(display,displayIntervalMod);
+            }
+            function display()
+            {
+                ctx.resetTransform();
+                ctx.translate(c.width / 2,c.height / 2);
+                ctx.rotate(rotation * (Math.PI / 180));
+                ctx.translate(-c.width / 2,-c.height / 2);
+                bSize += (20 - bSize) / 20;
+                rotation += (0 - rotation) / 10;
+                xOffset += ((c.width / 2) - ((bw * bSize) / 2) - xOffset) / 20;
+                yOffset += ((c.height / 2) - ((bh * bSize) / 2) - yOffset) / 20;
+                pausedTextMainScreen = ((status) + " game.");
+
+                if(t >= time)
+                {
+                    if(delay)
+                        delay = false;
+                    else
+                        a.move(0,(movementMod),0);
+                    t = 0;
+                    for (i = 3; i < colors.length; i++)
+                    {
+                        if((grid[0].includes(i)))
+                        {
+                            restart();
+                            break;
+                        }
+                    }
+                }
+                t++;
+                ctx.fillStyle = "#151515";
+                ctx.fillRect(0,0,c.width,c.height);
+                for(var y = 0; y < grid.length; y++)
+                {
+                    for(var x = 0; x < grid[y].length; x++)
+                    {
+                        if(grid[y][x] == 2 && rndNumber(0,1) < 0.1)
+                        {
+                            grid[y][x] = 0;
+                        }
+                        ctx.fillStyle = colors[grid[y][x]];
+                        ctx.fillRect(x * bSize + xOffset,y * bSize + yOffset,bSize,bSize);
+                    }
+                }
+                for(var i = 0; i < nextB.length; i++)
+                {
+                    displayBlocks(xOffset + (bw * bSize) + (bSize * 2),yOffset + (i * (bSize * 4)) + (bSize * 2),nextB[i]);
+                }
+                if(hold != -1)
+                    displayBlocks(xOffset - (bSize * 3),yOffset + (bSize * 2),hold);
+                ctx.font = ("bold " + (fontSizeJS) + "px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif");
+                ctx.fillStyle = "#505050";
+                ctx.fillText(((points) + " | " + (highestCombo) + " | " + (customRotAngle) + " | " + (combo) + " | " + (graphics) + " | " + (pausedTextMainScreen)),xOffset + (bSize * (bw / 2)),yOffset - (bSize / 2));
+                if(firstTime)
+				    ctx.fillText(("T3TR15 - A project by Jia Lin and Arthur Zheng. Please read the README.txt file."),xOffset + (bSize * (bw / 2)),(yOffset - (bSize / 2) - 40));
+                for(var i = p.length - 1; i >= 0; i --)
+                {
+                    if(p[i].life > 0)
+                        p[i].move();
+                    else
+                        p.splice(i,1);
+                }
+            }
+            function keyPressed(e)
+            {
+                if(e.keyCode == 32)
+                {
+                    if(paused)
+                    {
+                        return;
+                    }
+                    lastHeld = false;                    
+                    var count = 0;
+                    var y = 0;
+                    var x = 0;
+                    var color = 0;
+                    while(a.move(0,1,0) != "next")
+                    {
+                        if(a.move(0,1,0) == "next")
+                            break;
+                        count++;
+                        if(!minimalVFX)
+                        {
+                            bSize += 0.1;
+                            yOffset += 3;
+                            rotation += (a.x - (bw / 2 - 1)) / 3;
+                            y = a.y;
+                            x = a.x;
+                            color = a.color;
+                        }
+                    }
+                    for(var i = 0; i < count; i++)
+                    {
+                        p.push(new Particle([xOffset + (x * bSize),yOffset + (y * bSize),rndNumber(-5,5),rndNumber(-10,0),0,0.25],rndNumber(50,150),color));
+                    }
+                }
+                else if(e.keyCode == 37 || e.keyCode == 65)
+                {
+                    if(paused)
+                        return;
+                    a.move((-1*movementMod),0,0);
+                    if(!minimalVFX)
+                        rotation -= 1;
+                }
+                else if((e.keyCode == 38 || e.keyCode == 87) || e.keyCode == 88)
+                {
+                    if(paused)
+                        return;
+                    a.move(0,0,customRotAngle); //rotation is 3rd num.
+                    if(!minimalVFX)
+                    {
+                        bSize++;
+                        xOffset = (c.width / 2) - ((bw * bSize) / 2);
+                        yOffset = (c.height / 2) - ((bh * bSize) / 2);
+                    }
+                }
+                else if(e.keyCode == 17 || e.keyCode == 90)
+                {
+                    if(paused)
+                        return;
+                    a.move(0,0,(-1*customRotAngle)); //rotation is 3rd num.
+                    if(!minimalVFX)
+                    {
+                        bSize++;
+                        xOffset = (c.width / 2) - ((bw * bSize) / 2);
+                        yOffset = (c.height / 2) - ((bh * bSize) / 2);
+                    }
+                }
+                else if(e.keyCode == 39 || e.keyCode == 68)
+                {
+                    if(paused)
+                        return;
+                    a.move((movementMod),0,0);
+                    if(!minimalVFX)
+                        rotation += 1;
+                }
+                else if(e.keyCode == 40 || e.keyCode == 83)
+                {
+                    if(paused)
+                        return;
+                    a.move(0,(movementMod),0);
+                    if(!minimalVFX)
+                        yOffset -= bSize / 2;
+                }
+                else if(e.keyCode == 67 || e.keyCode == 16)
+                {
+                    if(paused || lastHeld)
+                    {
+                        return;
+                    }
+                    if(!minimalVFX)
+                    {
+                        if(rotationSeed2++%2 == 0)
+                            rotation += -1;
+                        else
+                            rotation += 1;
+                    }
+                    else if(minimalVFX)
+                    {
+                        rotation = 0;
+                    }
+                    if(hold == -1)
+                    {
+                        hold = a.color;
+                        a.display(0);
+                        a.nextBlocks(nextB.splice(0,1)[0]);
+                        nextB.push(rnd());
+                        lastHeld = true;
+                    }
+                    else
+                    {
+                        var temp = hold;
+                        hold = a.color;
+                        a.display(0);
+                        a.nextBlocks(temp);
+                        lastHeld = true;
+                    }
+                }
+                else if(e.keyCode == 82)
+                {
+                    if(paused)
+                        return;
+                    restart();
+                }
+                else if(e.keyCode == 85)
+                {
+                    particlesOn = false;
+                    comboParticles = false;
+                    minimalVFX = true;
+                    graphics = ("MinVFX");
+                }
+                else if(e.keyCode == 73)
+                {
+                    particlesOn = false;
+                    comboParticles = false;
+                    minimalVFX = false;
+                    graphics = ("LowVFX");
+                }
+                else if(e.keyCode == 79)
+                {
+                    particlesOn = true;
+                    comboParticles = false;
+                    minimalVFX = false;
+                    graphics = ("MedVFX");
+                }
+                else if(e.keyCode == 80)
+                {
+                    particlesOn = true;
+                    comboParticles = true;
+                    minimalVFX = false;
+                    graphics = ("MaxVFX");                    
+                }
+                else if(e.keyCode == 81)
+                {
+                    if(paused)
+                        return;
+                    delay = true;
+                    customRotAngle = customRotAngle - rotationMod;
+                    if(customRotAngle <= 0)
+                        customRotAngle = 45;
+                }
+                else if(e.keyCode == 69)
+                {
+                    if(paused)
+                        return;
+                    delay = true;
+                    customRotAngle = customRotAngle + rotationMod;
+                    if(customRotAngle >= 180)
+                        customRotAngle = 180;
+                }
+                else if(e.keyCode == 27)
+                {
+                    paused = !paused;
+                    if(paused)
+                    {
+                        movementMod = 0;
+                        rotationMod = 0;
+                        pausedTextDocTitle = (('\u2225'));
+                        status = ("Paused");
+                    }
+                    else
+                    {
+                        rotationMod = 45;
+                        movementMod = 1;
+                        pausedTextDocTitle = ('\u25B6');
+                        status = ("Ongoing");
+                    }
+                }
+                document.title = (("T3TR15 | ") + (pausedTextDocTitle) + " | " + (graphics));
+            }
+            function restart()
+            {
+                grid = Array(bh).fill(0).map(() => Array(bw).fill(0));
+                nextB = Array(5).fill(0).map(() => rnd());
+                a = new ActiveTetromino();
+                delay = false;
+                firstTime = false;
+                lastClear = false;
+                lastHeld = false;
+                hold = -1;
+                customRotAngle = 90;
+                pre = -1;
+                points = 0;
+                combo = 0;
+                totalClears = 0;
+                clearInterval(displayIntervalID);
+                displayIntervalMod = 20;
+                displayIntervalID = setInterval(display,displayIntervalMod);
+                if(!minimalVFX)
+                {
+                    bSize = 0;
+                    if(rotationSeed1++%2==0)
+                        rotation -= 180;
+                    else
+                        rotation += 180;
+                }
+            }
+            function fullScreen()
+            {
+                c.width = window.innerWidth;
+                c.height = window.innerHeight;
+                ctx.textAlign = "center";
+            }
+        </script>
+    </head>
+    <body onload = "initialize();" onresize = "fullScreen();" onkeydown = "keyPressed(event);">
+        <canvas id = "cId"></canvas>
+    </body>
+</html>
