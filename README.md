@@ -7,7 +7,7 @@ There is text above the board. It includes (in the following order) your score, 
 # Tetriminos
 If you choose to poke around in the index.html file, you may notice additional tetriminos listed as comments. These tetriminos were originally supposed to be in T3TR15, but would ruin the user experience. However, the only exception to this rule is the "onesquare" piece, which only takes up one space and is therefore viable as a custom tetrimino.
 # Key binding
-Key binding for tetriminos is based off of those found in Tetris Friends (see https://i.redd.it/5yj1ehsbxfu21.png), with additional WASD keys which correspond to the arrow keys. However, there are also additional keyboard controls that customize the overall user experience, which are covered below.
+Key binding for moving and rotating tetriminos is based off of [those found in Tetris Friends](https://i.redd.it/5yj1ehsbxfu21.png), with additional WASD keys which correspond to the arrow keys. However, there are also additional keyboard controls that customize the overall user experience, which are covered below.
 # VFX settings
 You can change VFX settings at any time. Below are the keys:
 * U - Minimal VFX. Turns off particles and rotation of the screen.
@@ -29,4 +29,4 @@ The developers of T3TR15 are not responsible for any damages, including physical
 The developers of T3TR15 do not own anything related to the registered trademark of Tetris. This Tetris variant was made only for educational purposes.
 # That's all for now.
 Now head on over to https://T3TR15.github.io and enjoy! Please report any bugs (not including those mentioned under the "Potential error(s)" heading) by emailing T3TR15.github.io@gmail.com.
-# Made with love from JL and SZ. <3
+# Made with love from JL and SZ. :heart:
