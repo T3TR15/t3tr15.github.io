@@ -8,17 +8,17 @@ There is text above the board. It includes (in the following order) your score, 
 If you choose to poke around in the index.html file, you may notice additional tetriminos listed as comments. These tetriminos were originally supposed to be in T3TR15, but would ruin the user experience. However, the only exception to this rule is the "onesquare" piece, which only takes up one space and is therefore viable as a custom tetrimino.
 # Key binding
 Key binding for moving and rotating tetriminos is based off of [those found in Tetris Friends](https://i.redd.it/5yj1ehsbxfu21.png), with additional WASD keys which correspond to the arrow keys. However, there are also additional keyboard controls that customize the overall user experience, which are covered below.
-# VFX settings
+## VFX settings
 You can change VFX settings at any time. Below are the keys:
 * U - Minimal VFX. Turns off particles and rotation of the screen.
 * I - Low VFX. No particles, but screen rotates based on the keys you press.
 * O - Medium VFX. Low VFX + basic particles.
 * P - Maximum VFX. A combination of basic particles and text, which displays your current combo and follows the basic particles.
-# Rotation
+## Rotation
 This Tetris variant allows you to rotate your tetriminos at custom angles. (Highly not recommended, but a feature anyways.) For user convenience, changing the rotation freezes the piece mid-air (but does not pause the game entirely).
 * Q - Subtracts 45 degrees from the angle that the tetrimino is being rotated (default is 90 degrees, minimum is 45 degrees).
 * E - Adds 45 degrees to the angle that the tetrimino is being rotated (maximum is 180 degrees).
-# Restarting the game
+## Restarting the game
 Although the game auto-detects if the board is full and starts a new game immediately, you can still reset your board and tetrimonos by pressing R. For legitmacy reasons, you can only reset when the game is not paused.
 # Potential error(s)
 Although a solution to the back-end code of each error listed here is possible, it's easier for us developers to inform you of these errors in order to minimize any suprises. With that clarification, let us do so.
@@ -29,4 +29,4 @@ The developers of T3TR15 are not responsible for any damages, including physical
 The developers of T3TR15 do not own anything related to the registered trademark of Tetris. This Tetris variant was made only for educational purposes.
 # That's all for now.
 Now head on over to https://T3TR15.github.io and enjoy! Please report any bugs (not including those mentioned under the "Potential error(s)" heading) by emailing T3TR15.github.io@gmail.com.
-# :heart::heart::heart::heart: Made with love from JL and SZ. :heart::heart::heart::heart:
+# Made with love from JL and SZ. :heart:
