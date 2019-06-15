@@ -20,14 +20,13 @@ This Tetris variant allows you to rotate your tetriminos at custom angles. (High
 * E - Adds 45 degrees to the angle that the tetrimino is being rotated (maximum is 180 degrees).
 # Restarting the game
 Although the game auto-detects if the board is full and starts a new game immediately, you can still reset your board and tetrimonos by pressing R. For legitmacy reasons, you can only reset when the game is not paused.
-# Potential errors
+# Potential error(s)
 Although a solution to the back-end code of each error listed here is possible, it's easier for us developers to inform you of these errors in order to minimize any suprises. With that clarification, let us do so.
-* You cannot rotate certain tetriminos on the extreme sides of the board. This is due to the setup of the board (JavaScript arrays), and rotating the tetrimino would break the array's dimensions.
-* Occasionally, the board will flash, and (in extremely rare cases) leave full lines uncleared. However, the javascript.js file should rectify such errors on the board by itself. Apologies in advance if such errors ruin experiences of T3TR15 in competitive contexts.
+* You cannot rotate tetriminos on the extreme sides of the board. This is due to the setup of the board (JavaScript arrays), and rotating the tetrimino would break the array's dimensions.
 # Liability
 The developers of T3TR15 are not responsible for any damages, including physical and psychological, to any animate or inanimate objects as a result of accessing and/or interacting with T3TR15.
 # Copyright concerns
 The developers of T3TR15 do not own anything related to the registered trademark of Tetris. This Tetris variant was made only for educational purposes.
 # That's all for now.
-Now head on over to https://T3TR15.github.io and enjoy! Please report any bugs (not including those mentioned under the "Potential errors" heading) by emailing T3TR15.github.io@gmail.com.<br><br>
+Now head on over to https://T3TR15.github.io and enjoy! Please report any bugs (not including those mentioned under the "Potential error(s)" heading) by emailing T3TR15.github.io@gmail.com.<br><br>
 -With love, JL and SZ <3
