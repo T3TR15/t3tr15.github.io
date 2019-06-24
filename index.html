@@ -234,7 +234,7 @@
                     if(!minimalVFX)
                         yOffset -= bSize / 2;
                 }
-                else if(e.keyCode == 67 || e.code == ShiftLeft)
+                else if(e.keyCode == 67 || (e.location == 1 && e.keyCode == 16))
                 {
                     if(paused || lastHeld)
                     {
