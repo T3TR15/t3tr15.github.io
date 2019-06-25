@@ -149,8 +149,9 @@
                 ctx.fillStyle = "#505050";
                 ctx.fillText(((points) + " | " + (combo) + " | " + (highestCombo) + " | " + (customRotAngle) + " | " + (graphics) + " | " + (isMobile) + " | " + (pausedTextMainScreen)),xOffset + (bSize * (bw / 2)),yOffset - (bSize / 2));
                 if(firstTime)
+		{
 				    ctx.fillText(("T3TR15 - A Tetris variant by two New York bois. Please read the README.md file."),xOffset + (bSize * (bw / 2)),(yOffset - (bSize / 2) - 80));
-		if ((isMobile == ("Mobile")) && (firstTime))
+		if ((isMobile == ("Mobile"))
 		{
 			ctx.fillText(("In order to use T3TR15 properly, you must have a keyboard connected to your mobile device. Press any key to hide this message."),xOffset + (bSize * (bw / 2)),(yOffset - (bSize / 2) - 40));
 		}
@@ -158,6 +159,7 @@
 		    {
 		     ctx.fillText(("You are currently on a desktop. Enjoy your T3TR15 experience!"),xOffset + (bSize * (bw / 2)),(yOffset - (bSize / 2) - 40));
 		    }
+	    }
                 for(var i = p.length - 1; i >= 0; i --)
                 {
                     if(p[i].life > 0)
