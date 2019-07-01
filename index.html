@@ -150,14 +150,14 @@
                 ctx.fillText(((points) + " | " + (combo) + " | " + (highestCombo) + " | " + (customRotAngle) + " | " + (graphics) + " | " + (isMobile) + " | " + (pausedTextMainScreen)),xOffset + (bSize * (bw / 2)),yOffset - (bSize / 2));
                 if(firstTime)
 		{
-		 ctx.fillText(("T3TR15 - A Tetris variant by two New York bois. Please read the README.md file."),xOffset + (bSize * (bw / 2)),(yOffset - (bSize / 2) - 80));
 			if(isMobile == ("Mobile"))
 			{
+			ctx.fillText(("T3TR15 - A Tetris variant by two New York bois. Please read the README.md file."),xOffset + (bSize * (bw / 2)),(yOffset - (bSize / 2) - 80));
 			ctx.fillText(("You are on a mobile device. Please connect a keyboard and then press any key."),xOffset + (bSize * (bw / 2)),(yOffset - (bSize / 2) - 40));
 			}
 			else
 			{
-			ctx.fillText(("Enjoy T3TR15."),xOffset + (bSize * (bw / 2)),(yOffset - (bSize / 2) - 40));
+			ctx.fillText(("T3TR15 - A Tetris variant by two New York bois. Please read the README.md file."),xOffset + (bSize * (bw / 2)),(yOffset - (bSize / 2) - 40));
 			}
 	        }
                 for(var i = p.length - 1; i >= 0; i --)
