@@ -18,6 +18,8 @@ You can change VFX settings at any time. Below are the keys:
 This Tetris variant allows you to rotate your tetriminos at custom angles. (Highly not recommended, but a feature anyways.) For user convenience, changing the rotation freezes the piece mid-air (but does not pause the game entirely).
 * Q - Subtracts 45 degrees from the angle that the tetrimino is being rotated (default is 90 degrees, minimum is 45 degrees).
 * E - Adds 45 degrees to the angle that the tetrimino is being rotated (maximum is 180 degrees).
+## Pausing the game
+To support users playing on iPad Pros using the Smart Keyboard Folio and MacBook Pro users with the Touch Bar, the backquote key (immediately below the Escape key on most keyboards) can also pause the game.
 ## Restarting the game
 Although the game auto-detects if the board is full and starts a new game immediately, you can still reset your board and tetrimonos by pressing R. For legitmacy reasons, you can only reset when the game is not paused.
 # Potential error(s)
