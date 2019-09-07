@@ -1,6 +1,7 @@
 function ActiveTetromino()
 {
     this.color = rnd();
+    //this.color = ("#4834d4");
     this.blocks = tetrominos[this.color];
     this.x = Math.floor(bw / 2);
     this.y = 1;
@@ -110,6 +111,23 @@ function ActiveTetromino()
                         for(var i = y; i > 0; i --)
                         {
                             grid[i] = grid[i - 1].slice();
+                        }
+                        magnetPowerUpProb = rndNumber(1,200);
+                        if (magnetPowerUpProb == 200)
+                        {
+                            for (var z = 0; z < grid.length; z++)
+                            {
+                                for (var b = 0; b < grid[z].length; b++)
+                                {
+                                    var filteredRow = grid[z].filter(isNotZero);
+                                    var filteredRowLength = filteredRow.length;
+                                    for (var d = (filteredRowLength + 1); d < 11; d++)
+                                    {
+                                        filteredRow.push(0);
+                                    }
+                                    grid[z] = filteredRow;
+                                }
+                            }
                         }
                         points += counter;
                         if (totalClears++%20==0)
